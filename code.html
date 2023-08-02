@@ -1,0 +1,25 @@
+<template>
+  <lightning-card title="Currency Converter" icon-name="utility:money">
+        <lightning-input type="number" onchange={amountHandler}
+        label="Amount to convert(USD)" 
+        class="slds-m-around_large">
+    </lightning-input>
+
+     <lightning-combobox
+        name="progress"
+        label="Select currency"
+        value={value}
+        placeholder="Select Progress"
+        options={options}
+        onchange={comboboxHandler}
+        class="slds-m-around_large" >
+    </lightning-combobox>
+
+    <lightning-button variant="brand" label="Convert" onclick={convertHandler} class="slds-m-around_large">
+
+    </lightning-button>
+        <template if:true={isAvailble}>
+            <p>Converted amount <strong>{convertedAmount}</strong></p>
+        </template>
+    </lightning-card>
+</template>
